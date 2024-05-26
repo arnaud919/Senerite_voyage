@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Senerite Voyage{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
         {% endblock %}
@@ -11,7 +11,27 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
+
     <body>
+        {% block header %}
+            <nav class="menu_flex">
+                <div>
+                    <a href="{{path('index')}}">Accueil</a>
+                </div>
+                <div>
+                    {% if app.user %}
+                        <div>
+                            <a href="{{path('profil')}}">{{ app.user.firstname }}</a>
+                        </div>
+                    {% else %}
+                        <div>
+                            <a href="{{path('app_login')}}">Se connecter</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </nav>
+        {% endblock %}
+
         {% block body %}{% endblock %}
     </body>
 </html>

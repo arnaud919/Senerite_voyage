@@ -1,3 +1,20 @@
 body {
     background-color: skyblue;
+    margin: 0;
+}
+
+.menu_flex{
+    display: flex;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    padding: 10px 0px;
+    margin: 0px;
+}
+
+.accomodation_index{
+    display: flex;
+
+    >{
+        width:150px;
+    }
 }

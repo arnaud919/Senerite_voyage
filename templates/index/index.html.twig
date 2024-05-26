@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Senerite Voyage</h1>
+
+    <h2>Prenez le temps de reconnecter</h2>
+
+    {% for accomodation in accomodations %}
+
+    <div class="accomodation_index">
+        <div>
+            <a href="accomodation/{{ accomodation.id }}">{{ accomodation.nameaccomodation }}</a>
+        </div>
+    </div>
+
+    
+    {% endfor %}
+
+{% endblock %}

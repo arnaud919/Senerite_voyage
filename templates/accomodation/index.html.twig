@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccomodationController!{% endblock %}
+
+{% block body %}
+    <h1>
+        {{ accomodation.nameaccomodation }}
+    </h1>
+
+    <h1>
+        {{ accomodation.pricenight }}
+    </h1>
+
+    <p>
+        {{ accomodation.descriptionaccomodation }}
+    </p>
+
+    <h2>Gallerie</h2>
+
+    {% for photoaccomodation in photoaccomodations %}
+    <div>
+        <img src="{{ asset('images/accomodation/#{{ photoaccomodation }}') }}"/>
+    </div>
+    {% endfor %}
+
+{% endblock %}
